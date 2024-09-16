@@ -825,7 +825,12 @@ if (srcFilename) {
     t2t_phase2 (dslGrammar, rewrite_js, src);
     `;
     var phase2 = generated + boilerplate;
-    let src = fs.readFileSync(srcFilename, 'utf-8');
+    let src = ""
+    if ('-' == srcFilename) {
+	src = fs.readFileSync(0, 'utf-8');
+    } else {
+	src = fs.readFileSync(srcFilename, 'utf-8');
+    }
     var result = eval (phase2);
     console.log (result);
 } else {
