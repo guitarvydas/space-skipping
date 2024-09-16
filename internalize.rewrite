@@ -1,8 +1,8 @@
-internalize {
+% rewrite internalize {
   text [c+] = ‛«c»’
-  char_string [ldq cs* rdq] = ‛«ldq»«_.encodews (cs)»«rdq»’
-  char_comment [kcomment cs* nl] = ‛⌈«_.encodews (cs)»⌉\n’
-  char_word [lb cs+ rb] = ‛«lb»«encodeURIComponent (cs)»«rb»’
+  char_string [ldq cs* rdq] = ‛«ldq»⎨encodews ‛«cs»’⎬«rdq»’
+  char_comment [kcomment cs* nl] = ‛⌈⎨encodews ‛«cs»’⎬⌉\n’
+  char_word [lb cs+ rb] = ‛«lb»⎨encodeURIComponent ‛«cs»’⎬«rb»’
   char_any [c] = ‛«c»’
 
   stringchar [c] = ‛«c»’
