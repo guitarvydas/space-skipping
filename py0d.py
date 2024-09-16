@@ -1010,7 +1010,7 @@ def probeC_instantiate (reg, owner, name, template_data):
 
 def probe_handler (eh, msg):
     s = msg.datum.srepr ()
-    print (f"... probe {eh.name}: {s}", file=sys.stderr)
+    print (f"\x1B[31mprobe {eh.name}:\x1B[0m {s}", file=sys.stderr)
 
     
 def trash_instantiate (reg, owner, name, template_data):      
